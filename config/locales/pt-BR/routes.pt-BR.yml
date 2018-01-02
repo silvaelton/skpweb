@@ -1,0 +1,6 @@
+pt-BR:
+  routes:
+    store: 'lojas'
+    session: 'acesso'
+  modules:
+    store: 'lojas'

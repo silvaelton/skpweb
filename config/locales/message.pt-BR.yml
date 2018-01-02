@@ -1,0 +1,5 @@
+pt-BR:
+  success: "Operação realizada com sucesso!"
+  error: "Não foi possível realizar a operação solicitada!"
+  confirm: "Tem certeza que deseja executar esta operação?"
+  disable_with: "Carregando..."
