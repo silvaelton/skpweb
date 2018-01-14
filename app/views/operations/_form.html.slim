@@ -1,3 +1,25 @@
 = simple_form_for [@store,@operation], remote: true do |f|
-  = f.input :name
-  = f.button :submit, class: 'ui button blue'
+  .field
+    = f.input :name
+  .field
+    = f.input :observation
+  .fields
+    .three.wide.field
+      = f.input :started_at, as: :string, input_html: { class: 'date'}
+    .three.wide.field
+      = f.input :ended_at, as: :string, input_html: { class: 'date'}
+  .fields
+    .three.wide.field
+      = f.input :value_start, input_html: { class: 'coin'}
+    .three.wide.field
+      = f.input :value_goal, input_html: { class: 'coin'}
+    .three.wide.field
+      = f.input :percent_start, input_html: { class: 'coin'}
+    .three.wide.field
+      = f.input :percent_goal, input_html: { class: 'coin'}
+    .four.wide.field
+      = f.input :percent_fixed_goal, input_html: { class: 'coin'}
+  .three.wide.field
+    = f.input :status, as: :select, include_blank: false
+  .field
+    = f.button :submit, class: 'ui button blue'

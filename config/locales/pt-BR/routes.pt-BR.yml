@@ -6,6 +6,10 @@ pt-BR:
     manager: 'gerente'
     operation: 'operacoes'
     sale: 'venda'
+    scope: 'periodo'
+    avaliation_category: 'categoria-avaliacao'
+    avaliation_item: 'item-avaliacao'
+    manager_avaliation: 'gerente-avaliacao'
   modules:
     store: 'lojas'
     seller: 'vendedor'

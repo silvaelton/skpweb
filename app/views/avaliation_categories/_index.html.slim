@@ -1,0 +1,12 @@
+- if @operation.avaliation_categories.present?
+  - @operation.avaliation_categories.order(created_at: :desc).each do |category|
+    tr id="row-#{category.id}"
+      td= category.name
+      td.collapsing= category.minimum_score
+      td.collapsing
+        = link_to "<i class='ui icon remove'></i>".html_safe, store_operation_avaliation_category_path(@store, @operation, category), method: :delete, data: { confirm: t(:confirm)}, class: 'ui icon button red'
+
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.

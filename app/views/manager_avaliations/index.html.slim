@@ -1,0 +1,9 @@
+table.ui.table.striped.celled
+  thead
+    tr
+      th Data
+      th Observação
+      th.collapsing= link_to "<i class='icon plus'></i>".html_safe, new_store_operation_manager_avaliation_path(@store, @operation), remote: true, class: 'ui icon blue button', data: { disable_with: t(:disable_with_loading)}
+
+  tbody.index
+    = render 'index'

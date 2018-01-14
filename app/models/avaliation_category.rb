@@ -1,0 +1,2 @@
+class AvaliationCategory < ApplicationRecord
+end

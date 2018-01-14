@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager_avaliation_id: 1
+  avaliation_item_id: 1
+  score: 1.5
+
+two:
+  manager_avaliation_id: 1
+  avaliation_item_id: 1
+  score: 1.5

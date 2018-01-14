@@ -1,11 +1,17 @@
 .ui.vertical.menu
-  a.item href='#{store_operation_path(@store, @operation)}'
+  a.item href="#{store_operation_path(@store, @operation)}"
     | Visão geral
-  a.item href='#{store_operation_sales_path(@store, @operation)}'
+  a.item href="#{store_operation_sales_path(@store, @operation)}"
     | Vendas
-    .ui.label #{@store.sellers.count}
-  a.item href='#{store_managers_path(@store)}'
-    | Pontos
+    .ui.label #{@operation.sales.count}
+  a.item href="#{store_operation_manager_avaliations_path(@store, @operation)}"
+    | Avaliação Gerente
     .ui.label #{@store.managers.count}
   a.item
     | Equipe indireta
+
+.ui.vertical.menu
+  a.item href="#{store_operation_avaliation_categories_path(@store, @operation)}"
+    | Categorias de avaliação (Gerente)
+  a.item href="#{store_operation_avaliation_items_path(@store, @operation)}"
+    | Critérios de avaliação (Gerente)

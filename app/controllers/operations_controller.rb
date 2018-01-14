@@ -11,7 +11,7 @@ class OperationsController < ApplicationController
   end
 
   def new
-    @operation = @store.operations.new
+    @operation  = @store.operations.new
   end
 
   def create
@@ -31,16 +31,23 @@ class OperationsController < ApplicationController
 
   def destroy
     @operation.destroy
+
+    redirect_to store_operations_path(@store)
   end
 
   private
 
   def set_params
-    params.require(:operation).permit(:name, :cnpj)
+    params.require(:operation).permit(:name, :observation, :started_at, :ended_at,
+      :value_start, :value_goal, :percent_start, :percent_goal, :percent_fixed_goal, :status)
   end
 
   def set_store
     @store = current_user.stores.find(params[:store_id])
+  end
+
+  def set_scope
+    @scope = @store.scopes.find(params[:scope_id])
   end
 
   def set_operation

@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114195802) do
+ActiveRecord::Schema.define(version: 20180114225016) do
+
+  create_table "avaliation_categories", force: :cascade do |t|
+    t.integer "operation_id"
+    t.string "name"
+    t.float "minimum_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "avaliation_items", force: :cascade do |t|
+    t.integer "operation_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "manager_avaliation_items", force: :cascade do |t|
+    t.integer "manager_avaliation_id"
+    t.integer "avaliation_item_id"
+    t.float "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "manager_avaliations", force: :cascade do |t|
+    t.integer "operation_id"
+    t.text "observation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "managers", force: :cascade do |t|
     t.integer "store_id"
@@ -26,6 +56,23 @@ ActiveRecord::Schema.define(version: 20180114195802) do
     t.integer "store_id"
     t.string "name"
     t.text "observation"
+    t.date "started_at"
+    t.date "ended_at"
+    t.float "value_start"
+    t.float "value_goal"
+    t.float "percent_start"
+    t.float "percent_goal"
+    t.float "percent_fixed_goal"
+    t.boolean "status", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.string "operation_id"
+    t.string "integer"
+    t.integer "seller_id"
+    t.float "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

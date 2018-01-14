@@ -2,3 +2,4 @@ pt-BR:
   disable_with: 'Processando aguarde...'
   disable_with_loading: "<span class='ui active inline loader tiny'></span>"
   confirm: 'Tem certeza que deseja realizar esta operação?'
+  no_information: 'Sem informação'

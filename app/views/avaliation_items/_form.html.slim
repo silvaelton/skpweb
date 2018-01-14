@@ -1,0 +1,5 @@
+= simple_form_for [@store,@operation, @item], remote: true do |f|
+  .field
+    = f.input :name
+  .field
+    = f.button :submit, class: 'ui button blue'

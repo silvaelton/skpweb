@@ -1,0 +1,7 @@
+= simple_form_for [@store,@operation, @category], remote: true do |f|
+  .field
+    = f.input :name
+  .four.wide.field
+    = f.input :minimum_score, as: :string, input_html: { class: 'coin' }
+  .field
+    = f.button :submit, class: 'ui button blue'

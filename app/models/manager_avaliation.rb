@@ -1,0 +1,2 @@
+class ManagerAvaliation < ApplicationRecord
+end

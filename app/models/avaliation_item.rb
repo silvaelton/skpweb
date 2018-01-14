@@ -1,0 +1,2 @@
+class AvaliationItem < ApplicationRecord
+end

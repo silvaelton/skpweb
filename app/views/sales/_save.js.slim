@@ -1,6 +1,6 @@
-- if @operation.errors.any?
+- if @sale.errors.any?
   | $(".ui.modal").html("#{escape_javascript(render 'new')}");
 - else
   | $('.index').html("#{escape_javascript(render 'index')}");
   | $(".ui.modal").modal('hide');
-  | $("#row-#{@operation.id}").addClass('positive');
+  | $("#row-#{@sale.id}").addClass('positive');

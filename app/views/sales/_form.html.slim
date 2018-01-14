@@ -1,3 +1,7 @@
-= simple_form_for [@store,@operation], remote: true do |f|
-  = f.input :name
-  = f.button :submit, class: 'ui button blue'
+= simple_form_for [@store,@operation, @sale], remote: true do |f|
+  .field
+    = f.input :seller_id, as: :select, collection: @store.sellers, include_blank: 'Selecione o vendedor...'
+  .four.wide.field
+    = f.input :value, as: :string, input_html: { class: 'coin' }
+  .field
+    = f.button :submit, class: 'ui button blue'

@@ -1,11 +1,14 @@
 table.ui.table.striped.celled
   thead
     tr
-      th Nome
-      th CPF
-      th Telefone
-      th Observação
+      th Descrição
+      th Inicío
+      th Fim
+      th Piso
+      th Meta
+      th (%) Ao exceder o piso
+      th (%) Ao exceder a meta
+      th (%) Valor fixo ao exceder a meta
       th.collapsing= link_to "<i class='icon plus'></i>".html_safe, new_store_operation_path(@store), remote: true, class: 'ui icon blue button', data: { disable_with: t(:disable_with_loading)}
-
   tbody.index
     = render 'index'

@@ -5,18 +5,19 @@ class SalesController < ApplicationController
 
   before_action :set_store
   before_action :set_operation
+  before_action :set_sale, only: [:destroy]
 
   def index
-    @operations = @store.operations
+    @sales = @operation.sales
   end
 
   def new
-    @operation = @store.operations.new
+    @sale = @operation.sales.new
   end
 
   def create
-    @operation = @store.operations.new(set_params)
-    @operation.save
+    @sale = @operation.sales.new(set_params)
+    @sale.save
   end
 
   def show
@@ -26,17 +27,19 @@ class SalesController < ApplicationController
   def edit;end
 
   def update
-    @operation.update(set_params)
+    @sale.update(set_params)
   end
 
   def destroy
-    @operation.destroy
+    @sale.destroy
+
+    redirect_to action: :index
   end
 
   private
 
   def set_params
-    params.require(:operation).permit(:name, :cnpj)
+    params.require(:sale).permit(:seller_id, :value)
   end
 
   def set_store
@@ -45,5 +48,9 @@ class SalesController < ApplicationController
 
   def set_operation
     @operation = @store.operations.find(params[:operation_id])
+  end
+
+  def set_sale
+    @sale = @operation.sales.find(params[:id])
   end
 end
