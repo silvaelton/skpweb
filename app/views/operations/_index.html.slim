@@ -1,0 +1,12 @@
+- if @store.operations.present?
+  - @store.operations.each do |operation|
+    tr id="row-#{operation.id}"
+      td= operation.name
+      td
+      td
+      td
+        = link_to "teste", store_operation_path(@store, operation)
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.

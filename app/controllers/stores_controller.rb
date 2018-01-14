@@ -16,7 +16,9 @@ class StoresController < ApplicationController
     @store.save
   end
 
-  def show;end
+  def show
+    render layout: 'sub_application'
+  end
 
   def edit;end
 

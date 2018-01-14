@@ -1,0 +1,14 @@
+.ui.vertical.menu
+  a.item href='#{store_path(@store)}'
+    | Visão Geral
+  a.item href='#{store_sellers_path(@store)}'
+    | Vendedores
+    .ui.label #{@store.sellers.count}
+  a.item href='#{store_managers_path(@store)}'
+    | Gerentes
+    .ui.label #{@store.managers.count}
+  a.item
+    | Equipe indireta
+  a.item href='#{store_operations_path(@store)}'
+    | Operações
+    .ui.label #{@store.operations.count}

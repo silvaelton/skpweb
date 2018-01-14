@@ -1,0 +1,23 @@
+
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Skipa
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body style='background-color: #f9f9f9'
+    = render 'layouts/partials/nav'
+    .ui.container
+      .ui.grid
+        .row
+          .column
+            h1= @store.name
+            = link_to "Retornar para gestão de lojas", stores_path, class: 'ui button tiny', data: { disable_with: t(:disable_with)}
+        .row
+          .three.wide.column
+            = render 'layouts/partials/sidebar'
+          .thirteen.wide.column
+            = yield
+    .ui.modal

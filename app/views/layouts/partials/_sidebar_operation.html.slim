@@ -1,0 +1,11 @@
+.ui.vertical.menu
+  a.item href='#{store_operation_path(@store, @operation)}'
+    | Visão geral
+  a.item href='#{store_operation_sales_path(@store, @operation)}'
+    | Vendas
+    .ui.label #{@store.sellers.count}
+  a.item href='#{store_managers_path(@store)}'
+    | Pontos
+    .ui.label #{@store.managers.count}
+  a.item
+    | Equipe indireta

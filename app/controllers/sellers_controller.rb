@@ -1,12 +1,12 @@
 require_dependency 'application_controller'
 
 class SellersController < ApplicationController
+  layout 'sub_application'
+  
   before_action :set_store
   before_action :set_seller, only: [:edit, :show, :update, :destroy]
 
-  def index
-    @sellers = @store.sellers
-  end
+  def index; end
 
   def new
     @seller = @store.sellers.new
@@ -17,7 +17,10 @@ class SellersController < ApplicationController
     @seller.save
   end
 
-  def show;end
+  def show
+    @sellers = @store.sellers
+    @sellers = @store.operations
+  end
 
   def edit;end
 
@@ -32,7 +35,7 @@ class SellersController < ApplicationController
   private
 
   def set_params
-    params.require(:seller).permit(:name, :cnpj)
+    params.require(:seller).permit(:name, :cpf)
   end
 
   def set_store

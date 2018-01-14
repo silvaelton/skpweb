@@ -1,6 +1,8 @@
 require_dependency 'application_controller'
 
 class ManagersController < ApplicationController
+  layout 'sub_application'
+  
   before_action :set_store
   before_action :set_manager, only: [:edit, :show, :update, :destroy]
 

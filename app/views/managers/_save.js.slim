@@ -1,0 +1,6 @@
+- if @manager.errors.any?
+  | $(".ui.modal").html("#{escape_javascript(render 'new')}");
+- else
+  | $('.index').html("#{escape_javascript(render 'index')}");
+  | $(".ui.modal").modal('hide');
+  | $("#row-#{@manager.id}").addClass('positive');

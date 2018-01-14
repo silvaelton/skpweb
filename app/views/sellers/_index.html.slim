@@ -1,0 +1,11 @@
+- if @store.sellers.present?
+  - @store.sellers.each do |seller|
+    tr id="row-#{seller.id}"
+      td= seller.name
+      td= seller.cpf
+      td
+      td colspan=2
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.

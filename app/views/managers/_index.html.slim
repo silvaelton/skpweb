@@ -1,0 +1,11 @@
+- if @store.managers.present?
+  - @store.managers.each do |manager|
+    tr id="row-#{manager.id}"
+      td= manager.name
+      td= manager.cpf
+      td
+      td colspan=2
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.

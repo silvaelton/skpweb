@@ -2,5 +2,10 @@ pt-BR:
   routes:
     store: 'lojas'
     session: 'acesso'
+    seller: 'vendedor'
+    manager: 'gerente'
+    operation: 'operacoes'
+    sale: 'venda'
   modules:
     store: 'lojas'
+    seller: 'vendedor'

@@ -1,10 +1,10 @@
 require_dependency 'application_controller'
 
-class OperationsController < ApplicationController
-  layout 'sub_application'
+class SalesController < ApplicationController
+  layout 'operation_application'
 
   before_action :set_store
-  before_action :set_operation, only: [:edit, :show, :update, :destroy]
+  before_action :set_operation
 
   def index
     @operations = @store.operations
@@ -44,6 +44,6 @@ class OperationsController < ApplicationController
   end
 
   def set_operation
-    @operation = @store.operations.find(params[:id])
+    @operation = @store.operations.find(params[:operation_id])
   end
 end
