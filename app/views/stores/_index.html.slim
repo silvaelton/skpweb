@@ -1,0 +1,14 @@
+- if @stores.present?
+  - @stores.each do |store|
+    tr id="row-#{store.id}"
+      td= store.name
+      td.collapsing= store.cnpj
+      td
+      td
+      td.collapsing
+        = link_to "<i class='icon share'></i>".html_safe, store_path(store), class: 'ui button icon blue', data: { disable_with: t(:disable_with_loading)}
+        = link_to "<i class='icon pencil'></i>".html_safe, edit_store_path(store), remote: true, class: 'ui button icon green', data: { disable_with: t(:disable_with_loading)}
+        = link_to "<i class='icon remove'></i>".html_safe, store_path(store), method: :delete,class: 'ui button icon red', data: { confirm: t(:confirm)}
+- else
+  tr
+    td Nenhum registro encontrado.

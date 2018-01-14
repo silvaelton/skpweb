@@ -1,0 +1,4 @@
+= simple_form_for @store, remote: true do |f|
+  = f.input :name
+  = f.input :cnpj, input_html: { class: 'cnpj'}
+  = f.button :submit, class: 'ui button blue'

@@ -1,0 +1,4 @@
+= simple_form_for @session do |f|
+  = f.input :email
+  = f.input :password
+  = f.submit 'Realizar acesso', class: 'ui button blue fluid', data: { disable_with: t(:disable_with)}

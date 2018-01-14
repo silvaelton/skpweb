@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.1.4'
 
 gem 'turbolinks', '~> 5'
+gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jbuilder', '~> 2.5'
@@ -18,6 +19,12 @@ gem 'puma', '~> 3.7'
 
 gem 'simple_form'
 gem 'slim'
+
+gem 'sass-rails'
+gem 'semantic-ui-sass'
+
+gem 'email_validator'
+gem 'validates_cpf_cnpj'
 
 group :development, :test do
   gem 'byebug'

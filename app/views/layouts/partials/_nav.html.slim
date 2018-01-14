@@ -1,0 +1,10 @@
+.ui.menu style= 'margin-bottom: 0 !important; border: 0px !important; background-color:#00a3da;'
+  .ui.container
+    .ui.image
+      = image_tag 'logo.png', size: '70x60'
+.ui.menu style= 'margin-top: 0 !important'
+  .ui.container
+    = link_to "Minhas Lojas", stores_path, class: 'item'
+    = link_to "Relatórios", "#", class: 'item'
+    .right.menu
+      = link_to "Finalizar sessão", session_path(current_user), method: :delete, class: 'item'

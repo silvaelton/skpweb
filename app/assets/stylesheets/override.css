@@ -1,0 +1,28 @@
+.ui.blue.buttons .button, .ui.blue.button {
+  background-color: #00a3da;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+
+.ui.blue.buttons .button, .ui.blue.button:hover {
+  background-color: #0081ad;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+
+.help-block {
+  color: #940000;
+}
+
+.ui.table tr.positive, .ui.table td.positive {
+  background: #e6ffad !important;
+}
+
+.ui.loader:after {
+  border-color: #ffffff #f7f7f700 #ffffff00 !important;
+}
+.ui.loader:before {
+  border: .2em solid rgba(218, 218, 218, 0.68) !important;
+}
