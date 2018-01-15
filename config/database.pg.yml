@@ -7,13 +7,7 @@ default: &default
 development:
   <<: *default
   database: skpweb_development
-  username: postgres
-  password: 123456789
-  host: localhost
 
 production:
   <<: *default
   database: skpweb_production
-  username: postgres
-  password: 123456789
-  host: localhost
