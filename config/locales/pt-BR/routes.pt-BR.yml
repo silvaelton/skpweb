@@ -10,6 +10,7 @@ pt-BR:
     avaliation_category: 'categoria-avaliacao'
     avaliation_item: 'item-avaliacao'
     manager_avaliation: 'gerente-avaliacao'
+    manager_avaliation_item: 'gerente-avaliacao-item'
   modules:
     store: 'lojas'
     seller: 'vendedor'

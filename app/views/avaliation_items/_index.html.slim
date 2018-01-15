@@ -1,8 +1,9 @@
 - if @operation.avaliation_items.present?
-  - @operation.avaliation_items.order(created_at: :desc).each do |item|
+  - @operation.avaliation_items.order(name: :asc).each do |item|
     tr id="row-#{item.id}"
       td= item.name
       td.collapsing
+        = link_to "<i class='ui icon pencil'></i>".html_safe, edit_store_operation_avaliation_item_path(@store, @operation, item), remote: true, data: { disable_with: t(:disable_with_loading)}, class: 'ui icon button green'
         = link_to "<i class='ui icon remove'></i>".html_safe, store_operation_avaliation_item_path(@store, @operation, item), method: :delete, data: { confirm: t(:confirm)}, class: 'ui icon button red'
 
 - else

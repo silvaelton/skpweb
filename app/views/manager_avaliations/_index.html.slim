@@ -2,7 +2,9 @@
   - @operation.manager_avaliations.order(created_at: :desc).each do |avaliation|
     tr id="row-#{avaliation.id}"
       td= avaliation.created_at.strftime("%d/%m/%Y")
+      td= avaliation.avaliation_category.name
       td= avaliation.observation
+      td= avaliation.manager_avaliation_items_total
       td.collapsing
         = link_to "<i class='ui icon share'></i>".html_safe, store_operation_manager_avaliation_path(@store, @operation, avaliation), data: { disable_with: t(:disable_with_loading)}, class: 'ui icon button green tiny'
         = link_to "<i class='ui icon remove'></i>".html_safe, store_operation_manager_avaliation_path(@store, @operation, avaliation), method: :delete, data: { confirm: t(:confirm)}, class: 'ui icon button red tiny'

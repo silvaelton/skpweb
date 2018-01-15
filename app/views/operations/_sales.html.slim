@@ -1,0 +1,42 @@
+h3 Premiação por venda
+
+table.ui.table.striped.celled
+  thead
+    tr
+      th Exceder o piso
+      th Exceder a meta
+      th Fixo pela superação
+  tbody
+    tr
+      td= "#{@operation.percent_start} %"
+      td= "#{@operation.percent_goal} %"
+      td= number_to_currency @operation.percent_fixed_goal
+
+table.ui.table.striped.celled
+  thead
+    tr
+      th
+      th
+      th
+      th valor
+      th valor
+      th valor
+      th
+    tr
+      th Nome
+      th Vendas (R$)
+      th %
+      th Prêmio pelo exced.
+      th Prêmio pela super.
+      th Fixo
+      th Total
+  tbody
+    - @operation.sales.group(:seller_id).each do |sale|
+      tr
+        td= sale.seller.name
+        td= number_to_currency sale.seller.total_sale(@operation.id)
+        td
+        td
+        td
+        td
+        td

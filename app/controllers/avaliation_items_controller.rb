@@ -5,7 +5,7 @@ class AvaliationItemsController < ApplicationController
 
   before_action :set_store
   before_action :set_operation
-  before_action :set_item, only: [:destroy]
+  before_action :set_item, only: [:destroy, :edit, :update]
 
   def index
     @items = @operation.avaliation_items
@@ -18,6 +18,12 @@ class AvaliationItemsController < ApplicationController
   def create
     @item = @operation.avaliation_items.new(set_params)
     @item.save
+  end
+
+  def edit; end
+
+  def update
+    @item.update(set_params)
   end
 
   def destroy

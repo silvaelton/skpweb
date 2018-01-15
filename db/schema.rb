@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180114225016) do
 
   create_table "manager_avaliations", force: :cascade do |t|
     t.integer "operation_id"
+    t.integer "avaliation_category_id"
     t.text "observation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
