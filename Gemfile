@@ -26,6 +26,8 @@ gem 'semantic-ui-sass'
 gem 'email_validator'
 gem 'validates_cpf_cnpj'
 
+gem 'pg'
+
 group :development, :test do
   gem 'byebug'
   gem 'capybara', '~> 2.13'
@@ -39,6 +41,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end

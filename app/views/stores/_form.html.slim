@@ -1,4 +1,24 @@
 = simple_form_for @store, remote: true do |f|
-  = f.input :name
-  = f.input :cnpj, input_html: { class: 'cnpj'}
-  = f.button :submit, class: 'ui button blue'
+  .field
+    = f.input :name, placeholder: "Informe o nome do estabelecimento"
+  .fields
+    .three.wide.field
+      = f.input :cnpj, input_html: { class: 'cnpj' }
+    .four.wide.field
+      = f.input :city, placeholder: "Informe o nome da cidade"
+    .three.wide.field
+      = f.input :state, placeholder: 'Informe o estado'
+    .three.wide.field
+      = f.input :cep, input_html: { class: 'cep' }
+    .three.wide.field
+      = f.input :neigh
+  .fields
+    .sixteen.wide.field
+      = f.input :address
+  .fields
+    .three.wide.field
+      = f.input :telephone
+    .three.wide.field
+      = f.input :status, as: :select, include_blank: false
+  .field
+    = f.button :submit, class: 'ui button blue', data: { disable_with: t(:disable_with)}

@@ -3,8 +3,12 @@
     tr id="row-#{manager.id}"
       td= manager.name
       td= manager.cpf
-      td
-      td colspan=2
+      td= manager.code
+      td= manager.telephone
+      td= manager.observation
+      td.collapsing colspan=2
+        = link_to "<i class='pencil icon'></i>".html_safe, edit_store_manager_path(@store, manager), remote: true, class: 'ui button green icon tiny'
+        = link_to "<i class='remove icon'></i>".html_safe, store_manager_path(@store, manager), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}
 - else
   tr
     td colspan=3

@@ -2,7 +2,7 @@ require_dependency 'application_controller'
 
 class SellersController < ApplicationController
   layout 'sub_application'
-  
+
   before_action :set_store
   before_action :set_seller, only: [:edit, :show, :update, :destroy]
 
@@ -30,12 +30,14 @@ class SellersController < ApplicationController
 
   def destroy
     @seller.destroy
+
+    redirect_to action: :index
   end
 
   private
 
   def set_params
-    params.require(:seller).permit(:name, :cpf)
+    params.require(:seller).permit(:name, :cpf, :code, :telephone)
   end
 
   def set_store

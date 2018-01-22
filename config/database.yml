@@ -7,6 +7,9 @@ default: &default
 development:
   <<: *default
   database: skpweb_development
+  localhost: 'localhost'
+  username: 'postgres'
+  password: 123456789
 
 production:
   <<: *default

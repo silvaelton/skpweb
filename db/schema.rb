@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180114225016) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "avaliation_categories", force: :cascade do |t|
     t.integer "operation_id"
     t.string "name"
@@ -48,7 +51,8 @@ ActiveRecord::Schema.define(version: 20180114225016) do
     t.string "name"
     t.string "cpf"
     t.string "observation"
-    t.string "telephon"
+    t.string "telephone"
+    t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,6 +86,8 @@ ActiveRecord::Schema.define(version: 20180114225016) do
     t.integer "store_id"
     t.string "name"
     t.string "cpf"
+    t.string "code"
+    t.string "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -90,6 +96,13 @@ ActiveRecord::Schema.define(version: 20180114225016) do
     t.integer "user_id"
     t.string "name"
     t.string "cnpj"
+    t.string "telephone"
+    t.string "city"
+    t.string "state"
+    t.string "cep"
+    t.string "address"
+    t.string "neigh"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

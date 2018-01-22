@@ -5,7 +5,8 @@ class CreateManagers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :cpf
       t.string :observation
-      t.string :telephon
+      t.string :telephone
+      t.string  :code
       t.timestamps
     end
   end

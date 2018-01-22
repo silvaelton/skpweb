@@ -4,6 +4,8 @@ class CreateSellers < ActiveRecord::Migration[5.1]
       t.integer :store_id
       t.string  :name
       t.string  :cpf
+      t.string  :code
+      t.string  :telephone
 
       t.timestamps
     end
