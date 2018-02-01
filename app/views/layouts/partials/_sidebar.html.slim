@@ -1,14 +1,35 @@
-.ui.vertical.menu
-  a.item href='#{store_path(@store)}'
-    | Visão Geral
-  a.item href='#{store_sellers_path(@store)}'
-    | Vendedores
-    .ui.label #{@store.sellers.count}
-  a.item href='#{store_managers_path(@store)}'
-    | Gerentes
-    .ui.label #{@store.managers.count}
-  a.item
-    | Equipe indireta
-  a.item href='#{store_operations_path(@store)}'
-    | Períodos
-    .ui.label #{@store.operations.count}
+aside.sidebar
+  ul.main-nav
+    li
+      a.main-nav__link href="#{main_app.stores_path}"
+        span.main-nav__icon
+          i.icon.pe-7s-home
+        | Visão Geral
+    li.main-nav--collapsible
+      a.main-nav__link href=""
+        span.main-nav__icon
+          i.icon.pe-7s-menu
+        | Minhas Lojas
+      ul.main-nav__submenu
+        li
+          a href="#{main_app.new_store_path}" data-remote= true
+            i.pe-7s-help1
+            span Adicionar loja
+        li
+          a href="#{main_app.stores_path}"
+            i.pe-7s-note
+            span Listagem de lojas
+    li.main-nav--collapsible
+      a.main-nav__link href="ui.html"
+        span.main-nav__icon
+          i.icon.pe-7s-crop
+        | Administração
+      ul.main-nav__submenu
+        li
+          a href="404.html"
+            i.pe-7s-help1
+            span Meu usuário
+        li
+          a href="login.html"
+            i.pe-7s-note
+            span Finalizar sessão

@@ -1,4 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require semantic-ui
-//= require global
+//= require bootstrap/jquery-ui.min
+//= require bootstrap/bootstrap.min
+//= require bootstrap/main

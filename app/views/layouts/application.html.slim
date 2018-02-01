@@ -7,7 +7,12 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body style='background-color: #f9f9f9'
-    = render 'layouts/partials/nav'
-    .ui.container
-      = yield
-    .ui.modal
+    /= render 'layouts/partials/nav'
+    = render 'layouts/partials/top'
+    .wrapper
+      = render 'layouts/partials/sidebar'
+      .content
+        = yield
+    #modal.modal role="dialog" tabindex="-1"  aria-labelledby="modal"
+      .modal-dialog role="document"
+        .modal-content

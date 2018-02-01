@@ -2,6 +2,18 @@
   .six.wide.column
   .four.wide.column
     .image  style= 'text-align: center'
-      = image_tag 'logo.png', size:'200x200'
-    .ui.segment style= 'margin-top: 20%'
-      = render 'form'
+
+.wrapper.login-page
+  .row.mtop-100
+    .col-md-4.col-md-offset-4.clearfix.bg--dark
+      .main-logo
+        = image_tag 'logo.png', size:'200x200'
+      = simple_form_for @session do |f|
+        span.input-group-addon
+          i.pe-7f-user.pe-fw
+        = f.input :email, label: false, placeholder: "Digite seu e-mail"
+        span.input-group-addon
+          i.pe-7f-lock.pe-fw
+        = f.input :password, label: false, placeholder: "Digite sua senha"
+        .clearfix
+        = f.submit "Realizar acesso", class: 'btn btn-skyblue pull-right'

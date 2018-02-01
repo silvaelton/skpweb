@@ -8,7 +8,7 @@ module Skpweb
   class Application < Rails::Application # :nodoc:
     config.load_defaults 5.1
 
-    config.assets.paths << Rails.root.join('vendor/ui-kits')
+    config.assets.paths << Rails.root.join('vendor/templates')
     config.assets.paths << Rails.root.join('vendor/javascripts')
     config.assets.paths << Rails.root.join('fonts')
 
