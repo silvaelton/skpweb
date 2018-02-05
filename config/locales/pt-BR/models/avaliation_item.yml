@@ -1,0 +1,7 @@
+pt-BR:
+  activerecord:
+    models:
+      avaliation_item: 'Critério de avaliação'
+    attributes:
+      avaliation_item:
+        name: 'Nome'

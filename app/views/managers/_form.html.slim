@@ -1,4 +1,12 @@
 = simple_form_for [@store,@manager], remote: true do |f|
-  = f.input :name
-  = f.input :cpf
-  = f.button :submit, class: 'ui button blue'
+  .fields
+    .eight.wide.field
+      = f.input :name
+    .three.wide.field
+      = f.input :cpf, input_html: { class: 'cpf'}
+    .two.wide.field
+      = f.input :code
+    .three.wide.field
+      = f.input :telephone
+  .field
+    = f.button :submit, class: 'ui button blue', data: { disable_with: t(:disable_with)}

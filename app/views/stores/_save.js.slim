@@ -1,6 +1,6 @@
 - if @store.errors.any?
-  | $("#modal .modal-content").html("#{escape_javascript(render 'new')}");
+  | $(".ui.modal .content").html("#{escape_javascript(render 'form')}");
 - else
   | $('.index').html("#{escape_javascript(render 'index')}");
-  | $("#modal").modal('hide');
+  | $(".ui.modal").modal('hide');
   | $("#row-#{@store.id}").addClass('green');

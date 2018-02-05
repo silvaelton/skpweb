@@ -5,7 +5,7 @@
       td= sale.seller.name
       td.collapsing= number_to_currency sale.value
       td.collapsing
-        = link_to "<i class='ui icon remove'></i>".html_safe, store_operation_sale_path(@store, @operation, sale), method: :delete, data: { confirm: t(:confirm)}, class: 'ui icon button red'
+        = link_to "<i class='ui icon remove'></i>".html_safe, store_operation_sale_path(@store, @operation, sale), method: :delete, data: { confirm: t(:confirm)}, class: 'ui icon button red tiny'
   tfoot
     tr
       th colspan=2

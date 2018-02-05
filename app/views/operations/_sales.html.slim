@@ -18,9 +18,9 @@ table.ui.table.striped.celled
       th
       th
       th
-      th valor
-      th valor
-      th valor
+      th= @operation.percent_start
+      th= @operation.percent_goal
+      th= @operation.percent_fixed_goal
       th
     tr
       th Nome
@@ -31,10 +31,10 @@ table.ui.table.striped.celled
       th Fixo
       th Total
   tbody
-    - @operation.sales.group(:seller_id).each do |sale|
+    - @operation.sales.select(:seller_id).group(:seller_id).each do |sale|
       tr
-        td= sale.seller.name
-        td= number_to_currency sale.seller.total_sale(@operation.id)
+        td= Seller.find(sale.seller_id).name
+        td= number_to_currency @operation.sales.where(seller_id: sale.seller_id).sum(:value)
         td
         td
         td

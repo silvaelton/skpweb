@@ -1,0 +1,11 @@
+.ui.segment
+  .ui.header
+    | Vendedores/Vendas
+  .ui.grid
+    .row
+      .sixteen.wide.column
+        = pie_chart  @operation.sales.joins(:seller).group('sellers.name').count
+    .ui.divider
+    .row
+      .sixteen.wide.column
+        = bar_chart @operation.sales.joins(:seller).group('sellers.name').count

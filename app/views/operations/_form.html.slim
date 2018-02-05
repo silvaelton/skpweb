@@ -5,9 +5,9 @@
     = f.input :observation
   .fields
     .three.wide.field
-      = f.input :started_at, as: :string, input_html: { class: 'date'}
+      = f.input :started_at, as: :string, input_html: { class: 'date', value: f.object.started_at.present? ? localize(f.object.started_at) : nil}
     .three.wide.field
-      = f.input :ended_at, as: :string, input_html: { class: 'date'}
+      = f.input :ended_at, as: :string, input_html: { class: 'date', value: f.object.ended_at.present? ? localize(f.object.ended_at) : nil}
   .fields
     .three.wide.field
       = f.input :value_start, input_html: { class: 'coin'}

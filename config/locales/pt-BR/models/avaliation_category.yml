@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    models:
+      avaliation_category: 'Categoria de avaliação'
+    attributes:
+      avaliation_category:
+        name: 'Nome'
+        minimum_score: 'Pontuação mínima'

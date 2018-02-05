@@ -2,7 +2,7 @@
   .row
     .column
       h1 Minhas Lojas
-      = link_to "+ Adicionar loja", new_store_path,remote: true, class: 'btn btn-skyblue', data: { disable_with: t(:disable_with)}
+      = link_to "+ Adicionar loja", new_store_path,remote: true, class: 'ui button blue', data: { disable_with: t(:disable_with)}
   .row
     .column
       table.ui.table.striped.celled.stackable
@@ -11,7 +11,7 @@
           th CNPJ
           th Estado
           th Cidade
-          th Status
+          th Situação
           th
         tbody.index
           = render 'index'

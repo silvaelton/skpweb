@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    models:
+      sale: 'Venda'
+    attributes:
+      sale:
+        seller_id: 'Vendedor'
+        value: 'Valor'

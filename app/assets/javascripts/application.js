@@ -1,5 +1,9 @@
+//= require rails-ujs
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap/jquery-ui.min
-//= require bootstrap/bootstrap.min
-//= require bootstrap/main
+//= require semantic-ui
+//= require jquery.mask.min
+//= require global
+//= require Chart.bundle
+//= require chartkick

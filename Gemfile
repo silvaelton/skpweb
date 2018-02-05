@@ -28,6 +28,8 @@ gem 'validates_cpf_cnpj'
 
 gem 'pg'
 
+gem 'chartkick'
+
 group :development, :test do
   gem 'byebug'
   gem 'capybara', '~> 2.13'

@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      store: 'Loja'
+    attributes:
+      store:
+        name: 'Nome'
+        cnpj: 'CNPJ'
+        city: 'Cidade'
+        state: 'Estado'
+        cep: 'CEP'
+        neigh: 'Bairro'
+        address: 'Logradouro'
+        telephone: 'Telefone'
+        status: 'Ativo?'

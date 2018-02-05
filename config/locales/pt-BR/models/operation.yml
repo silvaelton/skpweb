@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      operation: 'Operação'
+    attributes:
+      operation:
+        name: 'Nome'
+        observation: 'Observação'
+        started_at: 'Início'
+        ended_at: 'Fim'
+        value_start: 'Piso'
+        value_goal: 'Meta'
+        percent_start: '% Ao exceder o piso'
+        percent_goal: '% Ao exceder a meta'
+        percent_fixed_goal: 'Fixo por execeder a meta'
+        status: 'Ativo?'

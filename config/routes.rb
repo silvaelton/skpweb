@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       end
       resources :avaliation_categories, path: I18n.t('routes.avaliation_category')
       resources :avaliation_items,      path: I18n.t('routes.avaliation_item')
+      resources :reports
+      resources :accounts
+
     end
   end
 end

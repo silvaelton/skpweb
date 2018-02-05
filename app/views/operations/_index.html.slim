@@ -1,12 +1,13 @@
 - if @store.operations.present?
   - @store.operations.each do |operation|
     tr id="row-#{operation.id}"
-      td
+      td.collapsing
         p
           b= operation.name
         p= operation.observation
-      td.collapsing= operation.started_at.strftime("%d/%m/%Y") rescue I18n.t(:no_information)
-      td.collapsing= operation.ended_at.strftime("%d/%m/%Y") rescue I18n.t(:no_information)
+      td.collapsing
+        p= operation.started_at.strftime("%d/%m/%Y") rescue I18n.t(:no_information)
+        = operation.ended_at.strftime("%d/%m/%Y") rescue I18n.t(:no_information)
       td.collapsing= number_to_currency operation.value_start
       td.collapsing= number_to_currency operation.value_goal
       td.collapsing= "#{operation.percent_start} %"

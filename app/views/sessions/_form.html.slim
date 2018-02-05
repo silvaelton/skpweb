@@ -1,4 +1,4 @@
 = simple_form_for @session do |f|
-  = f.input :email
-  = f.input :password
+  = f.input :email, placeholder: 'Digite seu e-mail'
+  = f.input :password, placeholder: 'Digite sua senha'
   = f.submit 'Realizar acesso', class: 'ui button blue fluid', data: { disable_with: t(:disable_with)}

@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      seller: 'Vendedor'
+    attributes:
+      seller:
+        name: 'Nome'
+        cpf: 'CPF'
+        code: 'Matrícula'
+        telephone: 'Telefone'
