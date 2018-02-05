@@ -26,3 +26,11 @@
 .ui.loader:before {
   border: .2em solid rgba(218, 218, 218, 0.68) !important;
 }
+
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

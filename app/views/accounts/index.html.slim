@@ -1,1 +1,52 @@
 .ui.segment
+  h4 Prêmio Comercial
+  table.ui.table.striped.celled
+    thead
+      tr
+        th Vendedor
+        th Valor
+    tbody
+      - @total = 0
+      - @store.sellers.each do |seller|
+        tr
+          td= seller.name
+          - @total += @operation.total_seller_prize(seller.id)
+          td.collapsing= number_to_currency @operation.total_seller_prize(seller.id)
+      tr
+        td
+          b Total
+        td.collapsing
+          .ui.label.green= number_to_currency @total
+
+.ui.segment
+  h4 Prêmio Qualitativo
+  table.ui.table.striped.celled
+    thead
+      tr
+        th Gerente(s)
+        th Encarregado(s)
+        th Total
+    tbody
+      tr
+        td
+        td
+        td
+
+.ui.segment
+  h4 Prêmio Equipe Indireta
+  table.ui.table.striped.celled
+    thead
+      tr
+        th Percentual
+        th Qtd. de funcionários
+        th Valor por funcionário
+    tbody
+      tr
+        td
+        td
+        td
+
+.ui.segment
+  h4 Prêmiação total à pagar
+  .ui.label.green.large
+    | R$ 100000,00

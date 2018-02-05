@@ -10,7 +10,7 @@ html
     = render 'layouts/partials/nav'
     .ui.container
       .ui.grid
-        .row
+        .row.no-print
           .column
             .ui.segment
               h1 Loja: #{@store.name}
@@ -21,7 +21,7 @@ html
               .ui.label= @operation.ended_at.strftime('%d/%m/%Y')
               = link_to "Retornar para listagem de períodos", store_operations_path(@store), data: { disable_with: t(:disable_with)}, style: 'float: right'
         .row
-          .three.wide.column
+          .three.wide.column.no-print
             = render 'layouts/partials/sidebar_operation'
           .thirteen.wide.column
             = yield
