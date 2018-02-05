@@ -4,7 +4,6 @@
       td.collapsing
         p
           b= operation.name
-        p= operation.observation
       td.collapsing
         p= operation.started_at.strftime("%d/%m/%Y") rescue I18n.t(:no_information)
         = operation.ended_at.strftime("%d/%m/%Y") rescue I18n.t(:no_information)

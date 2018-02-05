@@ -1,11 +1,11 @@
 - if @store.managers.present?
   - @store.managers.order(id: :asc).each do |manager|
     tr id="row-#{manager.id}"
-      td= manager.name
-      td= manager.cpf
-      td= manager.code
-      td= manager.telephone
-      td= manager.observation
+      td= manager.name rescue nil
+      td= manager.cpf rescue nil
+      td= manager.code rescue nil
+      td= manager.telephone rescue nil
+      td= manager.observation rescue nil
       td.collapsing
         = link_to "<i class='pencil icon'></i>".html_safe, edit_store_manager_path(@store, manager), remote: true, class: 'ui button green icon tiny'
         = link_to "<i class='remove icon'></i>".html_safe, store_manager_path(@store, manager), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}
