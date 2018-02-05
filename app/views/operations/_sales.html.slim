@@ -3,11 +3,17 @@ h3 Premiação por venda
 table.ui.table.striped.celled
   thead
     tr
+      th Piso
+      th Meta
+      th Excedente
       th Exceder o piso
       th Exceder a meta
       th Fixo pela superação
   tbody
     tr
+      td= number_to_currency @operation.value_start
+      td= number_to_currency @operation.value_goal
+      td= number_to_currency @operation.exceed_realized
       td= "#{@operation.percent_start} %"
       td= "#{@operation.percent_goal} %"
       td= number_to_currency @operation.percent_fixed_goal
@@ -18,9 +24,9 @@ table.ui.table.striped.celled
       th
       th
       th
-      th= @operation.percent_start
-      th= @operation.percent_goal
-      th= @operation.percent_fixed_goal
+      th= number_to_currency @operation.prize_exceed_start_value
+      th= number_to_currency @operation.prize_exceed_goal_value
+      th= number_to_currency @operation.percent_fixed_goal
       th
     tr
       th Nome
@@ -35,8 +41,11 @@ table.ui.table.striped.celled
       tr
         td= Seller.find(sale.seller_id).name
         td= number_to_currency @operation.sales.where(seller_id: sale.seller_id).sum(:value)
-        td
-        td
-        td
-        td
-        td
+        td= @operation.percent_by_seller(sale.seller_id)
+        td= number_to_currency @operation.seller_prize_exceed_start_value(sale.seller_id)
+        td= number_to_currency @operation.seller_prize_exceed_goal_value(sale.seller_id)
+        td= number_to_currency @operation.seller_fixed_goal(sale.seller_id)
+        td= number_to_currency @operation.total_seller_prize(sale.seller_id)
+
+        / td
+        /   = number_to_currency ((@operation.prize_exceed_start_value * @operation.percent_by_seller(sale.seller_id)) + (@operation.prize_exceed_goal_value * @operation.percent_by_seller(sale.seller_id)) + ((@operation.percent_fixed_goal > 0) if @operation.prize_exceed_goal_value > 0))

@@ -12,11 +12,14 @@ html
       .ui.grid
         .row
           .column
-            h1
-              = @store.name
+            .ui.segment
+              h1 Loja: #{@store.name}
+
               p
-                small= @operation.name
-            = link_to "Retornar para listagem de operações", store_operations_path(@store), class: 'ui button tiny', data: { disable_with: t(:disable_with)}
+                b Período(s)
+              .ui.label= @operation.started_at.strftime('%d/%m/%Y')
+              .ui.label= @operation.ended_at.strftime('%d/%m/%Y')
+              = link_to "Retornar para listagem de períodos", store_operations_path(@store), data: { disable_with: t(:disable_with)}, style: 'float: right'
         .row
           .three.wide.column
             = render 'layouts/partials/sidebar_operation'

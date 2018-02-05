@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20180114225016) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.string "operation_id"
+    t.integer "operation_id"
     t.string "integer"
     t.integer "seller_id"
     t.float "value"

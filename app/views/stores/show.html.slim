@@ -1,2 +1,41 @@
 .ui.segment
-  | ok
+  .header
+    h4 Geral
+  table.ui.table.striped.celled
+    thead
+      tr
+        th Gerentes
+        th Vendedores
+        th Períodos
+        th.collapsing Total de vendas
+    tbody
+      tr
+        td= @store.managers.count
+        td= @store.sellers.count
+        td= @store.operations.count
+        td.collapsing= number_to_currency @store.sales.sum(:value)
+
+  .header
+    h4 Períodos
+  table.ui.table.striped.celled
+    thead
+      tr
+        th Nome
+        th Início
+        th Fim
+        th Piso
+        th Meta
+        th Vendas
+    tbody
+      - if @store.operations.present?
+        - @store.operations.order(:started_at).each do |operation|
+          tr
+            td= link_to operation.name, store_operation_path(@store, operation)
+            td.collapsing= operation.started_at.strftime('%d/%m/%Y')
+            td.collapsing= operation.ended_at.strftime('%d/%m/%Y')
+            td.collapsing= number_to_currency operation.value_start
+            td.collapsing= number_to_currency operation.value_goal
+            td.collapsing= number_to_currency operation.sales.sum(:value)
+      - else
+        tr
+          td Nenhuma operação cadastrada.
