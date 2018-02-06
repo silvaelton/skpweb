@@ -1,0 +1,14 @@
+table.ui.table.striped.celled
+  thead
+    tr
+      th colspan=6
+        | Listando #{@store.managers.count} registro(s)
+    tr
+      th Nome
+      th Bonificação
+      th.collapsing Verificado?
+      th.collapsing Pontuação
+      th.collapsing= link_to "<i class='icon plus'></i>".html_safe, new_store_operation_manager_objective_path(@store), remote: true, class: 'ui icon blue button tiny', data: { disable_with: t(:disable_with_loading)}
+
+  tbody.index
+    = render 'index'

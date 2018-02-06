@@ -35,7 +35,7 @@ class AvaliationItemsController < ApplicationController
   private
 
   def set_params
-    params.require(:avaliation_item).permit(:name)
+    params.require(:avaliation_item).permit(:name, :avaliation_category_id)
   end
 
   def set_store

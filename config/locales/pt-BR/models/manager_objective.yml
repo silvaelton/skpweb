@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      manager_objective: 'Objetivo'
+    attributes:
+      manager_objective:
+        name: 'Nome'
+        base_value: 'Bonificação'
+        verified: 'Verificado?'

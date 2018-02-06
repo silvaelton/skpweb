@@ -5,3 +5,4 @@ pt-BR:
     attributes:
       avaliation_item:
         name: 'Nome'
+        avaliation_category_id: 'Categoria'

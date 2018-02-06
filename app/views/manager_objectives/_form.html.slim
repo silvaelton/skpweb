@@ -1,0 +1,10 @@
+= simple_form_for [@store,@operation, @objective], remote: true do |f|
+  .fields
+    .ten.wide.field
+      = f.input :name
+    .three.wide.field
+      = f.input :base_value
+    .three.wide.field
+      = f.input :verified, as: :select, include_blank: false
+  .field
+    = f.button :submit, class: 'ui button blue', data: { disable_with: t(:disable_with)}

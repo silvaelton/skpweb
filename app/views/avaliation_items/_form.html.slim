@@ -1,5 +1,7 @@
 = simple_form_for [@store,@operation, @item], remote: true do |f|
   .field
+    = f.input :avaliation_category_id, as: :select, collection: AvaliationCategory.all.order(:name), include_blank: 'Selecione...'
+  .field
     = f.input :name
   .field
     = f.button :submit, class: 'ui button blue'

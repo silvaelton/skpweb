@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :avaliation_items,      path: I18n.t('routes.avaliation_item')
       resources :reports
       resources :accounts
+      resources :manager_objectives
 
     end
   end

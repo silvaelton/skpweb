@@ -1,0 +1,14 @@
+- if @operation.manager_objectives.present?
+  - @operation.manager_objectives.order(id: :asc).each do |objective|
+    tr id="row-#{objective.id}"
+      td= objective.name rescue nil
+      td= objective.base_value rescue nil
+      td= objective.verified ? 'sim' : 'não' rescue nil
+      td= objective.verified ? objective.base_value : 0 rescue nil
+      td.collapsing
+        = link_to "<i class='pencil icon'></i>".html_safe, edit_store_operation_manager_objective_path(@store, @operation, objective), remote: true, class: 'ui button green icon tiny'
+        = link_to "<i class='remove icon'></i>".html_safe, store_operation_manager_objective_path(@store, @operation, objective), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.

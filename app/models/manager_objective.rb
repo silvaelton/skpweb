@@ -1,0 +1,2 @@
+class ManagerObjective < ApplicationRecord
+end
