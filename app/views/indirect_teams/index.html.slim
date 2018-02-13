@@ -1,0 +1,15 @@
+.ui.segment
+  h4 Equipe indireta
+  table.ui.table.striped.celled
+    thead
+      tr
+        th.collapsing Porcentagem
+        th.collapsing Qtd.
+        th.collapsing Valor por funcionário
+        th.collapsing Total
+    tbody
+      tr
+        td= "#{@operation.indirect_team_percent} %"
+        td= @operation.indirect_team_quantity
+        td
+        td

@@ -19,8 +19,8 @@ x Valor fixo não é porcentagem
 x Corrigir valores float
 x Edição perde um zero
 
-- Cadastro de venda
-  - Não aparece data e nome do vendedor, somente valor
+x Cadastro de venda
+  x Não aparece data e nome do vendedor, somente valor
 
 - Calculos do gerente
 - Telas de somatório geral

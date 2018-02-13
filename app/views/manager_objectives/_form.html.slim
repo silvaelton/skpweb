@@ -3,7 +3,7 @@
     .ten.wide.field
       = f.input :name
     .three.wide.field
-      = f.input :base_value
+      = f.input :base_value, as: :string, input_html: { class: 'coin'}
     .three.wide.field
       = f.input :verified, as: :select, include_blank: false
   .field

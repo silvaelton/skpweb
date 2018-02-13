@@ -7,7 +7,7 @@
         th Valor
     tbody
       - @total = 0
-      - @store.sellers.each do |seller|
+      - @store.sellers.where(id: @operation.sales.select(:seller_id).group(:seller_id)).each do |seller|
         tr
           td= seller.name
           - @total += @operation.total_seller_prize(seller.id)
@@ -23,30 +23,35 @@
   table.ui.table.striped.celled
     thead
       tr
-        th Gerente(s)
-        th Encarregado(s)
-        th Total
+        th Pontuação miníma
+        th Pontuação premiada
+        th Prêmio (R$) por ponto
+        th Prêmio Total
     tbody
       tr
-        td
-        td
-        td
+        td= @operation.manager_minimum_point
+        td= @operation.manager_total_point
+        td= number_to_currency @operation.manager_prize_point
+        td= number_to_currency @operation.manager_total_point_super
 
 .ui.segment
   h4 Prêmio Equipe Indireta
   table.ui.table.striped.celled
     thead
       tr
-        th Percentual
-        th Qtd. de funcionários
-        th Valor por funcionário
+        th.collapsing Porcentagem
+        th.collapsing Qtd.
+        th.collapsing Valor por funcionário
+        th.collapsing Total
     tbody
       tr
-        td
-        td
-        td
+        td= "#{@operation.indirect_team_percent} %"
+        td= @operation.indirect_team_quantity
+        td= number_to_currency @operation.total_indirect_team
+        td= number_to_currency @operation.percent_indirect_team
+
 
 .ui.segment
   h4 Prêmiação total à pagar
   .ui.label.green.large
-    | R$ 100000,00
+    h2= number_to_currency @operation.total_super

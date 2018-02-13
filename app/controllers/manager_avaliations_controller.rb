@@ -31,7 +31,7 @@ class ManagerAvaliationsController < ApplicationController
   private
 
   def set_params
-    params.require(:manager_avaliation).permit(:observation, :avaliation_category_id)
+    params.require(:manager_avaliation).permit(:observation, :avaliation_category_id, :minimum_value)
   end
 
   def set_store

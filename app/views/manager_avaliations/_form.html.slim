@@ -1,6 +1,8 @@
 = simple_form_for [@store,@operation, @avaliation], remote: true do |f|
   .field
     = f.input :avaliation_category_id, as: :select, collection: @operation.avaliation_categories.order(:name), include_blank: 'Selecione...'
+  .four.wide.field
+    = f.input :minimum_value, as: :string, input_html: { class: 'coin'}
   .field
     = f.input :observation
   .field

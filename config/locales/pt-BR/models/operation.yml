@@ -14,3 +14,6 @@ pt-BR:
         percent_goal: '% Ao exceder a meta'
         percent_fixed_goal: 'Fixo por execeder a meta'
         status: 'Ativo?'
+        indirect_team_quantity: 'Equipe indireta (Qtd)'
+        indirect_team_percent: 'Equipe indireta (%)'
+        manager_prize_point: 'Prêmio (R$) por ponto (Gerente)'

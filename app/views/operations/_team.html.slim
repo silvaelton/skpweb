@@ -1,8 +1,14 @@
 h3 Premiação equipe
-
 table.ui.table.striped.celled
   thead
     tr
-      th Equipe
-      th Prêmio
+      th.collapsing Porcentagem
+      th.collapsing Qtd.
+      th.collapsing Valor por funcionário
+      th.collapsing Total
   tbody
+    tr
+      td= "#{@operation.indirect_team_percent} %"
+      td= @operation.indirect_team_quantity
+      td= number_to_currency @operation.percent_indirect_team
+      td= number_to_currency @operation.total_indirect_team

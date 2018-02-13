@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206004647) do
+ActiveRecord::Schema.define(version: 20180213191121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20180206004647) do
     t.text "observation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "float"
+    t.float "minimum_value"
   end
 
   create_table "manager_objectives", force: :cascade do |t|
@@ -81,6 +83,9 @@ ActiveRecord::Schema.define(version: 20180206004647) do
     t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "indirect_team_percent"
+    t.integer "indirect_team_quantity"
+    t.float "manager_prize_point"
   end
 
   create_table "sales", force: :cascade do |t|

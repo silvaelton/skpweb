@@ -39,7 +39,8 @@ class OperationsController < ApplicationController
 
   def set_params
     params.require(:operation).permit(:name, :observation, :started_at, :ended_at,
-      :value_start, :value_goal, :percent_start, :percent_goal, :percent_fixed_goal, :status)
+      :value_start, :value_goal, :percent_start, :percent_goal, :percent_fixed_goal, :status,
+      :indirect_team_quantity, :indirect_team_percent, :manager_prize_point)
   end
 
   def set_store

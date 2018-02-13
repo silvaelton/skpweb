@@ -6,3 +6,4 @@ pt-BR:
       manager_avaliation:
         avaliation_category_id: 'Categoria'
         observation: 'Observação'
+        minimum_value: 'Pontuação mínima'

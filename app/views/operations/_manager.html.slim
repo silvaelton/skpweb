@@ -3,7 +3,15 @@ h3 Premiação gerente
 table.ui.table.striped.celled
   thead
     tr
-      th Gerente
-      th Avaliações
-      th Prêmio
+      th Pontuação atingida
+      th Pontuação miníma
+      th Pontuação premiada
+      th Prêmio (R$) por ponto
+      th Prêmio Total
   tbody
+    tr
+      td= @operation.manager_total_point
+      td= @operation.manager_minimum_point
+      td= @operation.manager_prize_total
+      td= number_to_currency @operation.manager_prize_point
+      td= number_to_currency @operation.manager_total_point_super

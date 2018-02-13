@@ -5,6 +5,5 @@ table.ui.table.striped.celled
       th Vendedor
       th Valor
       th.collapsing= link_to "<i class='icon plus'></i>".html_safe, new_store_operation_sale_path(@store, @operation), remote: true, class: 'ui icon blue button tiny', data: { disable_with: t(:disable_with_loading)}
-
-  tbody.index
+  tbody.index-sale
     = render 'index'

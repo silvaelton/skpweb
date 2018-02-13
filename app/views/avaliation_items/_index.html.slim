@@ -1,5 +1,5 @@
 - if @operation.avaliation_items.present?
-  - @operation.avaliation_items.order([name: :asc],[avaliation_category_id: :asc]).each do |item|
+  - @operation.avaliation_items.order(id: :asc).each do |item|
     tr id="row-#{item.id}"
       td
         p

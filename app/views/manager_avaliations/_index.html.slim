@@ -5,6 +5,7 @@
       td= avaliation.avaliation_category.name
       td= avaliation.observation
       td= avaliation.manager_avaliation_items_total
+      td= avaliation.minimum_value
       td.collapsing
         = link_to "<i class='ui icon share'></i>".html_safe, store_operation_manager_avaliation_path(@store, @operation, avaliation), data: { disable_with: t(:disable_with_loading)}, class: 'ui icon button green tiny'
         = link_to "<i class='ui icon remove'></i>".html_safe, store_operation_manager_avaliation_path(@store, @operation, avaliation), method: :delete, data: { confirm: t(:confirm)}, class: 'ui icon button red tiny'

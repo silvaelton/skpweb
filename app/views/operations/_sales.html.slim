@@ -5,9 +5,9 @@ table.ui.table.striped.celled
     tr
       th Piso
       th Meta
-      th Excedente
-      th Exceder o piso
-      th Exceder a meta
+      th Excedente (Piso)
+      th Prêmio (Exceder o piso)
+      th Prêmio (Exceder a meta)
       th Fixo pela superação
   tbody
     tr
@@ -37,15 +37,36 @@ table.ui.table.striped.celled
       th Fixo
       th Total
   tbody
+    - @total_seller_prize_exceed_start_value = 0
+    - @total_seller_prize_exceed_goal_value = 0
+    - @total_seller_fixed_goal = 0
+    - @super_total_seller_prize = 0
     - @operation.sales.select(:seller_id).group(:seller_id).each do |sale|
       tr
         td= Seller.find(sale.seller_id).name
         td= number_to_currency @operation.sales.where(seller_id: sale.seller_id).sum(:value)
         td= @operation.percent_by_seller(sale.seller_id)
+        - @total_seller_prize_exceed_start_value += @operation.seller_prize_exceed_start_value(sale.seller_id)
         td= number_to_currency @operation.seller_prize_exceed_start_value(sale.seller_id)
+        - @total_seller_prize_exceed_goal_value += @operation.seller_prize_exceed_goal_value(sale.seller_id)
         td= number_to_currency @operation.seller_prize_exceed_goal_value(sale.seller_id)
+        - @total_seller_fixed_goal += @operation.seller_fixed_goal(sale.seller_id)
         td= number_to_currency @operation.seller_fixed_goal(sale.seller_id)
+        - @super_total_seller_prize += @operation.total_seller_prize(sale.seller_id)
         td= number_to_currency @operation.total_seller_prize(sale.seller_id)
-
+    tr
+      td
+      td
+        b= number_to_currency @operation.sales.sum(:value)
+      td
+        b= "100 %"
+      td
+        b= number_to_currency @total_seller_prize_exceed_start_value
+      td
+        b= number_to_currency @total_seller_prize_exceed_goal_value
+      td
+        b= number_to_currency @total_seller_fixed_goal
+      td
+        b= number_to_currency @super_total_seller_prize
         / td
         /   = number_to_currency ((@operation.prize_exceed_start_value * @operation.percent_by_seller(sale.seller_id)) + (@operation.prize_exceed_goal_value * @operation.percent_by_seller(sale.seller_id)) + ((@operation.percent_fixed_goal > 0) if @operation.prize_exceed_goal_value > 0))

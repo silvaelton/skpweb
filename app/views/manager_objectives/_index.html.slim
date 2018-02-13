@@ -8,6 +8,13 @@
       td.collapsing
         = link_to "<i class='pencil icon'></i>".html_safe, edit_store_operation_manager_objective_path(@store, @operation, objective), remote: true, class: 'ui button green icon tiny'
         = link_to "<i class='remove icon'></i>".html_safe, store_operation_manager_objective_path(@store, @operation, objective), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}
+  tr
+    td
+    td
+    td
+    td
+      b= @operation.manager_objectives.total_value
+    td
 - else
   tr
     td colspan=3

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :reports
       resources :accounts
       resources :manager_objectives
-
+      resources :indirect_teams
     end
   end
 end
