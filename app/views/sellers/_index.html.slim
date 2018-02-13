@@ -2,9 +2,8 @@
   - @store.sellers.order(id: :asc).each do |seller|
     tr id="row-#{seller.id}"
       td= seller.name rescue nil
-      td= seller.cpf rescue nil
-      td= seller.code rescue nil
-      td= seller.telephone rescue nil
+      td.collapsing= seller.cpf rescue nil
+      td.collapsing= seller.telephone rescue nil
       td.collapsing
         = link_to "<i class='pencil icon'></i>".html_safe, edit_store_seller_path(@store, seller), remote: true, class: 'ui button green icon tiny'
         = link_to "<i class='remove icon'></i>".html_safe, store_seller_path(@store, seller), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}

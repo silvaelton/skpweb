@@ -1,3 +1,26 @@
-- modelagem de dados
-- implementar semantic-ui
-- acertar layout com as cores e logo
+x Cadastro loja
+  x Validador de CNPJ
+  x Mascara telefone
+
+- Visão geral da loja
+  - Quantidade equipe interna
+
+x Cadastro de vendedor
+  x Validador de CPF
+  x Mascara Telefone
+
+x Vendedor retirar matricula
+x Cadastro de gerente
+  x Retirar matrícula
+  x Retirar observação
+
+- Equipe indireta
+x Valor fixo não é porcentagem
+x Corrigir valores float
+x Edição perde um zero
+
+- Cadastro de venda
+  - Não aparece data e nome do vendedor, somente valor
+
+- Calculos do gerente
+- Telas de somatório geral

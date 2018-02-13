@@ -1,3 +1,4 @@
 class Manager < ApplicationRecord
-  validates :name, :cpf, presence: true
+  validates :name, presence: true
+  validates :cpf, cpf: true, presence: true
 end

@@ -1,12 +1,11 @@
 table.ui.table.striped.celled
   thead
     tr
-      th colspan=5
+      th colspan=4
         | Listando #{@store.sellers.count} registro(s)
     tr
       th Nome
       th CPF
-      th Matrícula
       th Telefone
       th.collapsing= link_to "<i class='icon plus'></i>".html_safe, new_store_seller_path(@store), remote: true, class: 'ui icon blue button tiny', data: { disable_with: t(:disable_with_loading)}
 

@@ -9,7 +9,25 @@ class Operation < ApplicationRecord
             :percent_start, :percent_goal, :percent_fixed_goal, presence: true
 
   # Correcao de campos
+  def value_start
+    '%.2f' % self[:value_start].to_f
+  end
 
+  def value_goal
+    '%.2f' % self[:value_goal].to_f
+  end
+
+  def percent_start
+    '%.2f' % self[:percent_start].to_f
+  end
+
+  def percent_goal
+    '%.2f' % self[:percent_goal].to_f
+  end
+
+  def percent_fixed_goal
+    '%.2f' % self[:percent_fixed_goal].to_f
+  end
 
   # Funcoes do vendedor
 

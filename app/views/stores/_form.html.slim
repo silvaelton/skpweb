@@ -2,11 +2,11 @@
   .field
     = f.input :name, placeholder: "Informe o nome do estabelecimento"
   .fields
-    .three.wide.field
+    .four.wide.field
       = f.input :cnpj, input_html: { class: 'cnpj' }
     .four.wide.field
       = f.input :city, placeholder: "Informe o nome da cidade"
-    .three.wide.field
+    .two.wide.field
       = f.input :state, placeholder: 'Informe o estado'
     .three.wide.field
       = f.input :cep, input_html: { class: 'cep' }
@@ -16,8 +16,8 @@
     .sixteen.wide.field
       = f.input :address, placeholder: 'Informe o endereço'
   .fields
-    .three.wide.field
-      = f.input :telephone
+    .four.wide.field
+      = f.input :telephone, input_html: { class: 'telephone'}
     .three.wide.field
       = f.input :status, as: :select, include_blank: false
   .field
