@@ -1,0 +1,22 @@
+tr
+  td= current_user.name
+  td.collapsing= current_user.email
+  td.collapsing Administrador
+  td.collapsing= current_user.status ? 'Ativo' : 'Inativo'
+  td.collapsing
+    .ui.button.icon.blue.tiny
+      i.icon.lock
+- if @users.present?
+  - @users.each do |user|
+    tr
+      td= user.name
+      td= user.email
+      td= user.privilege
+      td= user.status ? 'Ativo' : 'Inativo'
+      td.collapsing
+        = link_to "<i class='icon pencil'></i>".html_safe, edit_user_path(user), remote: true, class: 'ui button icon green tiny', data: { disable_with: t(:disable_with_loading)}
+        = link_to "<i class='icon remove'></i>".html_safe, user_path(user), method: :delete,class: 'ui button icon red tiny', data: { confirm: t(:confirm)}, remote: true
+- else
+  tr
+    td colspan=5
+      i Nenhum usuário cadastrado

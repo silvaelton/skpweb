@@ -1,0 +1,14 @@
+= simple_form_for @user, url: @user.new_record? ? users_path : user_path(@user), method: @user.new_record? ? :post : :put, remote: true do |f|
+  = f.input :name
+  .fields
+    .field.wide.four
+      = f.input :email
+    .field.wide.four
+      = f.input :password
+      - if !@user.new_record?
+        = f.hint "Informe somente se desejar alterar a senha atual"
+    .field.wide.four
+      = f.input :status, as: :select, include_blank: false
+    .field.wide.four
+      = f.input :privilege, as: :select, collection: StoreUser.privileges.keys, include_blank: false
+  = f.button :submit, class: 'ui button blue'

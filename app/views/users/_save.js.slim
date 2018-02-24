@@ -1,0 +1,6 @@
+- if @user.errors.any?
+  | $(".ui.modal .content").html("#{escape_javascript(render 'form')}");
+- else
+  | $('.index-user').html("#{escape_javascript(render 'index')}");
+  | $(".ui.modal").modal('hide');
+  | $("#row-#{@user.id}").addClass('positive');

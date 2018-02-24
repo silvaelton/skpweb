@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.text   :bio
       t.string :avatar
       t.boolean :status, default: true
+      t.integer :privilege, default: 0
       t.timestamps
     end
   end

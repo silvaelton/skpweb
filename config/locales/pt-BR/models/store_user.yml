@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      store_user: 'Usuário'
+    attributes:
+      store_user:
+        name: 'Nome'
+        email: 'E-mail'
+        password: 'Senha'
+        status: 'Ativo?'
+        privilege: 'Privilégio de acesso'

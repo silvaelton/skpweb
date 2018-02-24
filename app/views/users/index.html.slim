@@ -1,0 +1,16 @@
+.ui.grid
+  .row
+    .column
+      h1 Usuários
+      = link_to "+ Adicionar usuário", new_user_path,remote: true, class: 'ui button blue', data: { disable_with: t(:disable_with)}
+  .row
+    .column
+      table.ui.table.striped.celled.stackable
+        thead
+          th Nome
+          th Email
+          th Privilégio
+          th Situação
+          th
+        tbody.index-user
+          = render 'index'

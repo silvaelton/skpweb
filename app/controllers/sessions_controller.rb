@@ -2,7 +2,7 @@ require_dependency 'application_controller'
 
 class SessionsController < ApplicationController # :nodoc:
   layout 'session'
-  
+
   def index
     redirect_to action: :new
   end
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController # :nodoc:
     @session = Session.new(set_params)
     if @session.valid?
       session[:user_id] = @session.id
+      session[:user_store_id] = @session.user_id
       redirect_to stores_path
     else
       render action: :new
