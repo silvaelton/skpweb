@@ -140,7 +140,6 @@ ActiveRecord::Schema.define(version: 20180224120911) do
     t.text "bio"
     t.string "avatar"
     t.boolean "status", default: true
-    t.integer "privilege", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
