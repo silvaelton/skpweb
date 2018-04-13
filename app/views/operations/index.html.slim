@@ -1,7 +1,9 @@
 table.ui.table.striped.celled
   thead
     tr
-      th.collapsing colspan=8 = link_to "<i class='icon plus'></i>".html_safe, new_store_operation_path(@store), remote: true, class: 'ui icon blue button', data: { disable_with: t(:disable_with_loading)}
+      th.collapsing colspan=8
+        - if current_logged_user.administrador?
+          = link_to "<i class='icon plus'></i>".html_safe, new_store_operation_path(@store), remote: true, class: 'ui icon blue button', data: { disable_with: t(:disable_with_loading)}
     tr
       th Descrição
       th Início/Fim

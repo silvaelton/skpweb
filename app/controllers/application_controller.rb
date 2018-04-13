@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    redirect_to new_session_path if current_user.nil? && !controller_name != 'sessions'
+    if current_logged_user.nil?
+      redirect_to new_session_path if controller_name != 'sessions'
+    end
   end
 end

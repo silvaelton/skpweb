@@ -12,8 +12,16 @@ Rails.application.routes.draw do
       resources :manager_avaliations,   path: I18n.t('routes.manager_avaliation') do
         resources :manager_avaliation_items, path: I18n.t('routes.manager_avaliation_item')
       end
-      resources :avaliation_categories, path: I18n.t('routes.avaliation_category')
-      resources :avaliation_items,      path: I18n.t('routes.avaliation_item')
+
+      resources :avaliation_categories, path: I18n.t('routes.avaliation_category') do
+        get 'copy', on: :collection
+        post 'copy_create', on: :collection
+      end
+
+      resources :avaliation_items,      path: I18n.t('routes.avaliation_item') do
+        get 'copy', on: :collection
+        post 'copy_create', on: :collection
+      end
       resources :reports
       resources :accounts
       resources :manager_objectives

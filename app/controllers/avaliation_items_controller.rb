@@ -32,7 +32,21 @@ class AvaliationItemsController < ApplicationController
     redirect_to action: :index
   end
 
+  def copy
+    @category = CopyAvaliationItem.new
+  end
+
+  def copy_create
+    @category = CopyAvaliationItem.new(set_copy_params)
+    @category.operation_id = @operation.id
+    @category.copy_and_paste if @category.valid?
+  end
+
   private
+
+  def set_copy_params
+    params.require(:copy_avaliation_item).permit(:target_id)
+  end
 
   def set_params
     params.require(:avaliation_item).permit(:name, :avaliation_category_id)

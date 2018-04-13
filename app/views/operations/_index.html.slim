@@ -14,8 +14,9 @@
       td= number_to_currency operation.percent_fixed_goal
       td.collapsing
         = link_to "<i class='icon share'></i>".html_safe, store_operation_path(@store, operation), class: 'ui button blue icon tiny', data: { disable_with: t(:disable_with_loading)}
-        = link_to "<i class='icon pencil'></i>".html_safe, edit_store_operation_path(@store, operation), remote: true, class: 'ui button green icon tiny', data: { disable_with: t(:disable_with_loading)}
-        = link_to "<i class='icon remove'></i>".html_safe, store_operation_path(@store, operation), method: :delete, class: 'ui button red icon tiny', data: { confirm: t(:confirm)}
+        - if current_logged_user.administrador?
+          = link_to "<i class='icon pencil'></i>".html_safe, edit_store_operation_path(@store, operation), remote: true, class: 'ui button green icon tiny', data: { disable_with: t(:disable_with_loading)}
+          = link_to "<i class='icon remove'></i>".html_safe, store_operation_path(@store, operation), method: :delete, class: 'ui button red icon tiny', data: { confirm: t(:confirm)}
 - else
   tr
     td colspan=3

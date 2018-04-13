@@ -1,9 +1,10 @@
 .ui.vertical.menu
   a.item href='#{store_path(@store)}'
     | Visão Geral
-  a.item href='#{store_sellers_path(@store)}'
-    | Vendedores
-  a.item href='#{store_managers_path(@store)}'
-    | Gerentes
+  - if current_logged_user.administrador?
+    a.item href='#{store_sellers_path(@store)}'
+      | Vendedores
+    a.item href='#{store_managers_path(@store)}'
+      | Gerentes
   a.item href='#{store_operations_path(@store)}'
     | Períodos

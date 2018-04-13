@@ -2,14 +2,15 @@
   - @stores.each do |store|
     tr id="row-#{store.id}"
       td= store.name
-      td.collapsing= store.cnpj
+      td.collapsing= store.cnpj.unformat_cnpj.format_cnpj
       td.collapsing= store.state
       td.collapsing= store.city
       td.collapsing= store.status ? 'Ativo' : 'Inativo'
       td.collapsing
         = link_to "<i class='icon share'></i>".html_safe, store_path(store), class: 'ui button icon blue tiny', data: { disable_with: t(:disable_with_loading)}
-        = link_to "<i class='icon pencil'></i>".html_safe, edit_store_path(store), remote: true, class: 'ui button icon green tiny', data: { disable_with: t(:disable_with_loading)}
-        = link_to "<i class='icon remove'></i>".html_safe, store_path(store), method: :delete,class: 'ui button icon red tiny', data: { confirm: t(:confirm)}
+        - if current_logged_user.administrador?
+          = link_to "<i class='icon pencil'></i>".html_safe, edit_store_path(store), remote: true, class: 'ui button icon green tiny', data: { disable_with: t(:disable_with_loading)}
+          = link_to "<i class='icon remove'></i>".html_safe, store_path(store), method: :delete,class: 'ui button icon red tiny', data: { confirm: t(:confirm)}
 - else
   tr
     td Nenhum registro encontrado.

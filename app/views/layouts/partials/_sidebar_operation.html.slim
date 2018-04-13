@@ -1,20 +1,26 @@
 .ui.vertical.menu
   a.item href="#{store_operation_path(@store, @operation)}"
     | Visão geral
-  a.item href="#{store_operation_accounts_path(@store, @operation)}"
-    | Contas
-  a.item href="#{store_operation_sales_path(@store, @operation)}"
-    | Vendas
-  a.item href="#{store_operation_manager_avaliations_path(@store, @operation)}"
-    | Avaliação Gerente
-  a.item href="#{store_operation_manager_objectives_path(@store, @operation)}"
-    | Objetivos Gerente
-  a.item href="#{store_operation_indirect_teams_path(@store, @operation)}"
-    | Equipe indireta
-  a.item href="#{store_operation_reports_path(@store, @operation)}"
-    | Relatórios
-.ui.vertical.menu
-  a.item href="#{store_operation_avaliation_categories_path(@store, @operation)}"
-    | Categorias de avaliação (Gerente)
-  a.item href="#{store_operation_avaliation_items_path(@store, @operation)}"
-    | Critérios de avaliação (Gerente)
+  - if current_logged_user.administrador? || current_logged_user.gerente?
+    a.item href="#{store_operation_accounts_path(@store, @operation)}"
+      | Contas
+    a.item href="#{store_operation_sales_path(@store, @operation)}"
+      | Vendas
+  - if current_logged_user.administrador? || current_logged_user.supervisor?
+    a.item href="#{store_operation_manager_avaliations_path(@store, @operation)}"
+      | Avaliação Gerente
+  - if current_logged_user.administrador? || current_logged_user.supervisor? || current_logged_user.nutricionista?
+    a.item href="#{store_operation_manager_objectives_path(@store, @operation)}"
+      | Objetivos Gerente
+  - if current_logged_user.administrador?
+    a.item href="#{store_operation_indirect_teams_path(@store, @operation)}"
+      | Equipe indireta
+  - if current_logged_user.administrador?
+    a.item href="#{store_operation_reports_path(@store, @operation)}"
+      | Relatórios
+- if current_logged_user.administrador?
+  .ui.vertical.menu
+    a.item href="#{store_operation_avaliation_categories_path(@store, @operation)}"
+      | Categorias de avaliação (Gerente)
+    a.item href="#{store_operation_avaliation_items_path(@store, @operation)}"
+      | Critérios de avaliação (Gerente)

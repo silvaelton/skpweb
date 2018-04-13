@@ -24,6 +24,7 @@ class SessionsController < ApplicationController # :nodoc:
 
   def destroy
     session[:user_id] = nil
+    session[:user_store_id] = nil
 
     redirect_to new_session_path
   end

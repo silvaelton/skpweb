@@ -3,7 +3,9 @@ table.ui.table.striped.celled
     tr
       th Nome
       th Pontuação mínima
-      th.collapsing= link_to "<i class='icon plus'></i>".html_safe, new_store_operation_avaliation_category_path(@store, @operation), remote: true, class: 'ui icon blue button tiny', data: { disable_with: t(:disable_with_loading)}
+      th.collapsing
+        = link_to "<i class='icon copy'></i>".html_safe, copy_store_operation_avaliation_categories_path(@store, @operation), remote: true, class: 'ui icon green button tiny', data: { disable_with: t(:disable_with_loading)}
+        = link_to "<i class='icon plus'></i>".html_safe, new_store_operation_avaliation_category_path(@store, @operation), remote: true, class: 'ui icon blue button tiny', data: { disable_with: t(:disable_with_loading)}
 
   tbody.index
     = render 'index'
