@@ -1,5 +1,5 @@
 - if @store.operations.present?
-  - @store.operations.each do |operation|
+  - @store.operations.order(started_at: :desc).each do |operation|
     tr id="row-#{operation.id}"
       td
         p

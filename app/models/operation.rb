@@ -33,6 +33,9 @@ class Operation < ApplicationRecord
     '%.2f' % self[:percent_fixed_goal].to_f
   end
 
+  def indirect_team_percent
+    '%.2f' % self[:indirect_team_percent].to_f
+  end
 
   def total_super
     total_seller = 0
@@ -76,7 +79,7 @@ class Operation < ApplicationRecord
   # Funcoes do gerente
 
   def manager_total_point_super
-    (manager_prize_point.to_f * manager_prize_total.to_f)
+    '%.2f' % (manager_prize_point.to_f * manager_prize_total.to_f)
   rescue
     0
   end
@@ -86,13 +89,13 @@ class Operation < ApplicationRecord
     avaliation = self.manager_avaliations.total_manager_avaliation
     objective  = self.manager_objectives.total_value
 
-    (avaliation.to_f + objective.to_f)
+    '%.2f' % (avaliation.to_f + objective.to_f)
   rescue
     0
   end
 
   def manager_prize_total
-    (manager_total_point.to_f - manager_minimum_point.to_f).to_f
+    '%.2f' % (manager_total_point.to_f - manager_minimum_point.to_f).to_f
   rescue
     0
   end
