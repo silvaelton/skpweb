@@ -37,7 +37,7 @@ class SellersController < ApplicationController
   private
 
   def set_params
-    params.require(:seller).permit(:name, :cpf, :code, :telephone)
+    params.require(:seller).permit(:name, :cpf, :code, :telephone, :email)
   end
 
   def set_store

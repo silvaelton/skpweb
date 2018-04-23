@@ -3,6 +3,8 @@ pt-BR:
     store: 'lojas'
     session: 'acesso'
     seller: 'vendedor'
+    owner: 'proprietario'
+    supervisor: 'supervisor'
     manager: 'gerente'
     operation: 'operacoes'
     sale: 'venda'

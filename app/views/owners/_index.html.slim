@@ -1,0 +1,13 @@
+- if @store.owners.present?
+  - @store.owners.order(id: :asc).each do |owner|
+    tr id="row-#{owner.id}"
+      td= owner.name rescue nil
+      td.collapsing= owner.cpf.unformat_cpf.format_cpf rescue nil
+      td.collapsing= owner.telephone rescue nil
+      td.collapsing
+        = link_to "<i class='pencil icon'></i>".html_safe, edit_store_owner_path(@store, owner), remote: true, class: 'ui button green icon tiny'
+        = link_to "<i class='remove icon'></i>".html_safe, store_owner_path(@store, owner), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.

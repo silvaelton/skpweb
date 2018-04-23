@@ -1,0 +1,6 @@
+- if @seller.errors.any?
+  | $(".ui.modal").html("#{escape_javascript(render 'new')}");
+- else
+  | $('.index').html("#{escape_javascript(render 'sellers/index')}");
+  | $(".ui.modal").modal('hide');
+  | $("#row-#{@seller.id}").addClass('positive');

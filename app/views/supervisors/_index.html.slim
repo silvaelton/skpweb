@@ -1,0 +1,13 @@
+- if @store.supervisors.present?
+  - @store.supervisors.order(id: :asc).each do |supervisor|
+    tr id="row-#{supervisor.id}"
+      td= supervisor.name rescue nil
+      td.collapsing= supervisor.cpf.unformat_cpf.format_cpf rescue nil
+      td.collapsing= supervisor.telephone rescue nil
+      td.collapsing
+        = link_to "<i class='pencil icon'></i>".html_safe, edit_store_supervisor_path(@store, supervisor), remote: true, class: 'ui button green icon tiny'
+        = link_to "<i class='remove icon'></i>".html_safe, store_supervisor_path(@store, supervisor), class: 'ui button red icon tiny', method: :delete, data: { confirm: t(:confirm)}
+- else
+  tr
+    td colspan=3
+      | Nenhum registro encontrado.
