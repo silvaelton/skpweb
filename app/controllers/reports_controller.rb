@@ -13,7 +13,4 @@ class ReportsController < ApplicationController
     @store = current_user.stores.find(params[:store_id])
   end
 
-  def set_operation
-    @operation = @store.operations.find(params[:operation_id])
-  end
 end
