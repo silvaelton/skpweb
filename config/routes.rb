@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :sellers,     path: I18n.t('routes.seller')
     resources :owners,      path: I18n.t('routes.owner')
     resources :supervisors, path: I18n.t('routes.supervisor')
-    
+
     resources :operations,  path: I18n.t('routes.operation') do
       resources :sales, path: I18n.t('routes.sale')
       resources :manager_avaliations,   path: I18n.t('routes.manager_avaliation') do
