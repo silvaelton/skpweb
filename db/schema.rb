@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180224120911) do
+ActiveRecord::Schema.define(version: 20180507000109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 20180224120911) do
     t.float "manager_prize_point"
   end
 
+  create_table "owners", force: :cascade do |t|
+    t.integer "store_id"
+    t.string "name"
+    t.string "email"
+    t.string "telephone"
+    t.string "cpf"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sales", force: :cascade do |t|
     t.integer "operation_id"
     t.string "integer"
@@ -105,6 +115,7 @@ ActiveRecord::Schema.define(version: 20180224120911) do
     t.string "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
   create_table "store_users", force: :cascade do |t|
@@ -129,6 +140,17 @@ ActiveRecord::Schema.define(version: 20180224120911) do
     t.string "address"
     t.string "neigh"
     t.boolean "status", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "store_type", default: 0
+  end
+
+  create_table "supervisors", force: :cascade do |t|
+    t.integer "store_id"
+    t.string "name"
+    t.string "email"
+    t.string "telephone"
+    t.string "cpf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

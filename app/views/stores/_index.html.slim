@@ -6,6 +6,7 @@
       td.collapsing= store.state
       td.collapsing= store.city
       td.collapsing= store.status ? 'Ativo' : 'Inativo'
+      td.collapsing= store.store_type.humanize rescue nil
       td.collapsing
         = link_to "<i class='icon share'></i>".html_safe, store_path(store), class: 'ui button icon blue tiny', data: { disable_with: t(:disable_with_loading)}
         - if current_logged_user.administrador?

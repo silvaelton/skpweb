@@ -9,4 +9,5 @@ class Store < ApplicationRecord
   validates_presence_of :name, :telephone, :city, :state, :cep, :address
   validates :cnpj, cnpj: true, presence: true
 
+  enum store_type: ['delivery','loja','loja_e_delivery']
 end

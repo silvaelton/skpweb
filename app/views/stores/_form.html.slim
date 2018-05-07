@@ -20,5 +20,7 @@
       = f.input :telephone, input_html: { class: 'telephone'}
     .three.wide.field
       = f.input :status, as: :select, include_blank: false
+    .three.wide.field
+      = f.input :store_type, label: "Tipo de loja", as: :select, include_blank: false, collection: ::Store.store_types.map { |k,v| [k.humanize, k]}
   .field
     = f.button :submit, class: 'ui button blue', data: { disable_with: t(:disable_with)}
